@@ -1,0 +1,210 @@
+
+body {
+  font-family:"Open Sans", sans-serif;
+  font-size: 14px;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+
+
+}
+
+h1 {
+  font-family: "Source Sans Pro",serif;
+  font-size: 69px;
+  font-weight: bold;
+
+}
+h2, a,input, form button {
+  font-family: "Open Sans", sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+
+}
+
+a {
+  text-decoration: none;
+}
+header {
+  margin:0 ;
+  height: 75vh;
+  width:100vw;
+  background-image: url("images/annie-spratt.jpg");
+
+  background-position: center;
+  background-size: cover;
+}
+
+header nav{
+  display: flex;
+  justify-content: flex-end;
+
+}
+header nav a {
+  margin-right: 25px;
+  color:white;
+}
+
+header nav a:hover {
+  color: #D21034;
+}
+
+header h1 {
+  margin-bottom: 20px;
+  color: white;
+}
+
+header input {
+  width: 375px;
+  border-radius: 25px;
+  border-width: 1px;
+  height: 50px;
+}
+header button {
+  width: 50px;
+  height:50px;
+  border-radius: 25px;
+  border-width: 0;
+  background-color: #016A16;
+  color: white;
+}
+
+header button:hover {
+  background-color: #004E11;
+}
+article {
+  padding: 60px 0 70px;
+  width: 100vw;
+  margin: 0;
+  background-image: url("images/Ngaruroro.svg");
+
+}
+article nav {
+  display:flex;
+  justify-content: space-around;
+
+}
+article nav div {
+  background-color: green;
+  width: 100%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+article nav a {
+    color: black;
+}
+
+main {
+
+  background-color: white;
+  background-position: center;
+  background-size: cover;
+  width: 100vw;
+  background-image: url("images/Doubs.svg");
+
+}
+main h1 {
+  margin-top: 0;
+  display: inline-block;
+}
+
+h2 {
+  margin-top:0;
+  padding: 20px;
+}
+
+footer {
+  background-image: url("images/Doubs.svg");
+}
+footer h2 {
+  margin-bottom: 0;
+  font-style: italic;
+}
+
+.wordDiv {
+  margin: 0 auto;
+  width: 50%;
+  background-color: rgb(232 218 218 / 70%);
+  backdrop-filter: blur(10px);
+}
+
+h1.wordName{
+  display:none;
+}
+
+.selected {
+  color: #D21034;
+}
+.red, #def {
+  background-color: rgba(210, 16, 52, 0.6);
+}
+.blue, #examples {
+  background-color: rgba(0, 32, 159, 0.6);
+}
+.green, #phrases {
+  background-color: rgba(1, 106, 22, 0.5);
+}
+
+.playButton {
+  background-image: url("images/ear.svg");
+  background-position:center;
+  background-size:contain;
+  background-repeat: no-repeat;
+  width: 50px;
+  height: 50px;
+  border: none;
+  display: none;
+  margin-left: 10px;
+}
+
+
+
+
+#def, #examples, #phrases {
+  padding-bottom: 100px;
+  border-bottom: 5px solid;
+}
+
+
+
+
+/* Suggestion box styling   */
+#SuggestionUL {
+ list-style-type: none;
+ padding: 0;
+ margin: 0;
+ position: relative;
+ left:-27px;
+ top:0;
+ z-index: 3;
+}
+
+#SuggestionUL li a {
+  border: 1px solid #ddd;
+  margin-top: -1px; /* Prevent double borders */
+  background-color: #f6f6f6;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px;
+  color: black;
+  display:inline-block;
+  width: 357px;
+
+
+}
+
+#SuggestionUL li a:hover {
+  background-color: #c7c7c7;
+
+
+}
+
+
+
+/* Responsive*/
+
+@media only screen and (max-width: 1100px) {
+  body {
+    
+  }
+}

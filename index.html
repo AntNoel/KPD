@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Haitian Creole Dictionary</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400&family=Source+Sans+Pro:wght@700&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <header>
+
+      <nav>
+        <a href="#">About Us</a>
+        <a href="#" class="selected">Dictionary</a>
+      </nav>
+      <h1>Haitian-Creole Dictionary</h1>
+      <form class="" action="index.html" method="post">
+        <input type="text" name="" id="wordInput" placeholder="Enter a Word in English or Creole" onkeyup="displaySuggestionList()">
+        <button type="submit" name="submit">GO</button>
+      </form>
+    </header>
+    <main>
+
+        <h1 class="wordName"></h1>
+        <button type="button" name="button" class="playButton">
+        </button>
+
+
+
+      <article>
+        <div class="wordDiv">
+          <nav>
+            <div class="red">
+              <a href="#def">Definition</a>
+            </div>
+            <div class="blue">
+              <a href="#examples">Examples</a>
+            </div>
+            <div class="green">
+              <a href="#phrases">Phrases</a>
+            </div>
+
+          </nav>
+
+        <section id="def">
+          <h2 class="wordName"></h2>
+          <p class="wordDef"></p>
+        </section>
+        <section id="examples">
+          <h1>Examples</h1>
+          <p class="wordExam"></p>
+        </section>
+        <section id="phrases">
+          <h1>Phrases</h1>
+          <p class="wordPhrase"></p>
+        </section>
+        </div>
+
+      </article>
+    </main>
+
+
+    <footer>
+      <nav>
+        <img src="" alt="">
+        <h2>Kreyòl Pale © 2020</h2>
+      </nav>
+    </footer>
+
+
+  </section>
+
+
+
+
+  <script src="script.js" charset="utf-8"></script>
+  </body>
+</html>
