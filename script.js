@@ -23,29 +23,33 @@ const words = [{
     ],
 
   }, //, and continue with another word
-    {
-      name: "Paler",
-      audio: "",
-      definition: {
-        "sdsokdok": "di - sidjisjdj"
+  {
+    name: "Paler",
+    audio: "",
+    definition: {
+      "sdsokdok": "di - sidjisjdj"
     },
-      examples: [
-        ""
-      ],
-      phrases: [
-        ""
-      ],
-    },
-    {
-      name: "Palet"
-    },
-    {
-      name: "Palor"
-    },
-    {
-      name: "Palmas"
-    }
+    examples: [
+      ""
+    ],
+    phrases: [
+      ""
+    ],
+  },
+  {
+    name: "Palet"
+  },
+  {
+    name: "Palor"
+  },
+  {
+    name: "Palmas"
+  }
 ];
+
+//UI Elements for easy access
+const wordSearchBox = document.getElementById("wordInput");
+const header = document.querySelector("header");
 
 
 
@@ -136,46 +140,50 @@ const displayWord = (wordName) => {
 
 //Activated with user types
 const displaySuggestionList = () => {
-  //create a new suggestion list based on what you typed
-
+  //debugger not working?
   //Grab what was typed into the input Element
-  const wordInInput = document.getElementById("wordInput").value.toLowerCase();
+  const wordInInput = wordSearchBox.value.toLowerCase();
 
-  const allWordNamesList = [];
-
-  //Check if there is a suggestionbox in the element
-  existingSBox = document.getElementById("SuggestionUL");//Grabs the first suggestion box on the window
-  console.log("existingSBox"+existingSBox);
-  if(existingSBox) {//remove the children
-    existingSBox.parentNode.removeChild(existingSBox);
+  //Check if there is already a suggestionbox on the window, and removes it
+  //Fix bug here where this isn't working for all words!!
+  if(getSuggestionBox()) {
+      removeSuggestionBox();
   }
 
 
-  //Compare the input typed to the wordnames in the database, if the letters are contained, add first 5 words to a list
-  //Make this it's own function
-  const fiveSuggestionWords = [];
-  words.forEach((word, i) => {
-
-    //If the word/letter combo is in the dictionary and there is something in the input
-    if (word.name.toLowerCase().search(wordInInput) > -1 && (wordInInput)) {
-
-      //Add the word to a list
-      fiveSuggestionWords.push(word);
-
-    } else {
-      //If the word/letter combo isn't in the dictionary
-      console.log("Word not found!");
-    }
-  });
+  //Compare the input typed to the wordnames in the database and get suggestions
+  const wordSuggestions = getWordSuggestions(5);
 
   //create suggestions +list to display those to the user
-  console.log("This is the five words to suggest" + fiveSuggestionWords.length);
-  const suggestionList = createSuggestionList(fiveSuggestionWords);
+  const suggestionList = createSuggestionList(wordSuggestions);
 
-  //append the suggestion list to the input and display
-  const inputBox = document.getElementById("wordInput");
-  document.querySelector("header").appendChild(suggestionList);
+  //append the suggestion list to the header
+  header.appendChild(suggestionList);
 };
+
+//Checks if a SuggesionBox already exists
+const getSuggestionBox = () => {
+    return document.getElementById("SuggestionUL"); //Grabs the first suggestion box on the window
+
+};
+
+const removeSuggestionBox = () => {
+  //Deletes itself by accessing the parent and removing it's child
+  document.getElementById("SuggestionUL").parentNode.removeChild(document.getElementById("SuggestionUL"));
+};
+
+const getWordSuggestions = (suggestionNumber) => {
+  //Filters the words array for words that have the same letters as what's in the searchbox
+  //Cuts it down to 5 suggestions and returns
+  matchingWords = words.filter(function(word) {
+    return (word.name.toLowerCase().search(wordSearchBox.value.toLowerCase()) > -1 && (wordSearchBox.value.toLowerCase()));
+  });
+  matchingWords.splice(suggestionNumber);
+  console.log(matchingWords.length);
+  return matchingWords;
+
+};
+
 
 //Used to make a UL
 const createSuggestionList = (wordList) => {
